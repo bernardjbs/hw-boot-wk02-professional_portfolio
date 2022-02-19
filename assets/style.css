@@ -57,7 +57,6 @@ nav li {
     margin-left: 2em;
     display: inline-block;
     list-style-type: none;
-    min-width: 200px;
 }
 
 nav li a, .about-me-desc {
