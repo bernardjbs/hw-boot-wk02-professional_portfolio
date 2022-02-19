@@ -1,0 +1,67 @@
+:root {
+    --white: #D2D6EF;
+    --gray: rgb(82, 82, 82);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+* {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: black;
+}
+
+h1 {
+    font-size: 250%;
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+h2 {
+    font-size: 200%;
+}
+
+header {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    background-color: var(--gray);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1em;
+    box-shadow: 2px 5px 20px white;
+}
+
+header:hover {
+    box-shadow: 2px 5px 20px rgb(115, 227, 255);
+}
+
+nav ul {
+    background-color: var(--gray);
+}
+
+nav li {
+    margin-left: 2em;
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav li a {
+    background-color: var(--gray);
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+.myName {
+    background-color: var(--gray);
+    padding: 1em;
+}
+
+.navSection {
+    background-color: var(--gray);
+    padding: 1em;
+}
+
+
