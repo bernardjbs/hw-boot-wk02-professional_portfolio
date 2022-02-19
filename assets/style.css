@@ -34,7 +34,7 @@ header, #about-me {
     justify-content: space-between;
     align-items: center;
     border-radius: 1em;
-    /* box-shadow: 2px 5px 20px white; */
+    box-shadow: 2px 2px 20px white;
 }
 
 header {
@@ -43,6 +43,7 @@ header {
     flex: 1 1 auto;
     background-color: var(--black);
 }
+
 header:focus, #about-me:focus{
     outline: none;
     box-shadow: 2px 2px 20px var(--green);
@@ -118,8 +119,8 @@ nav li a, #about-me-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5em;
-    font-family: blackletter;
+    font-size: 3em;
+    font-family: monospace;
     color: var(--green);
 }
 
@@ -146,3 +147,45 @@ nav li a, #about-me-text {
         height: auto;
     }
 }
+
+
+.main-image-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-images {
+    background: var(--white);
+    width: 1565px;
+    height: 500px;
+    padding: 2em;
+    margin: 2em;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-image-container {
+    width: 1650px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sub-images {
+    background: var(--white);
+    min-width: 750px;
+    height: 400px;
+    padding: 2em;
+    margin: 2em;
+}
+
+.sub-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
