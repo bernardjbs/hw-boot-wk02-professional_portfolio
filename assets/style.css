@@ -25,8 +25,8 @@ h2 {
 
 header, #about-me {
     /* border: 1px solid red; */
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
     margin-top: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -105,9 +105,11 @@ nav li a, #about-me-text {
 
 .hero {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5em;
-    margin-right: 1em;
-    margin-left: 1em;
+    margin-right: 2em;
+    margin-left: 2em;
 }
 #hero-img {
     width: 1020px;
@@ -129,13 +131,75 @@ nav li a, #about-me-text {
     margin-left: 2em;
 }
 
+#work {
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+
+.main-image-container, .sub-image-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sub-image-container {
+    flex-wrap: wrap;
+}
+
+.main-images, .sub-images{
+    background: var(--white);
+    padding: 2em;
+    margin: 2em;
+}
+
+.main-images{
+    width: 1565px;
+    height: 500px;
+    position: relative;
+}
+
+.sub-images {
+    display: flex;
+    flex-direction: row;
+}
+
+.sub-images {
+    width: 750px;
+    height: 400px;
+    position: relative;
+}
+
+.main-image, .sub-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 25%;
+    left: 50px;
+    background-color: white;
+    color: var(--white);
+  }
+
+  .text-block h3 {
+      padding: 15px;
+  }
+
+  .text-block p {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @media screen and (max-width: 600px){
     #about-me, header{
         flex-direction: column;
     }
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1600px){
     .hero {
         flex-direction: column;
     }
@@ -146,46 +210,11 @@ nav li a, #about-me-text {
         max-width: 100%;
         height: auto;
     }
+
+    .sub-images {
+        height: 300px;
+    }
 }
 
 
-.main-image-container{
-    display: flex;
-    flex-direction: row;
-}
-
-.main-images {
-    background: var(--white);
-    width: 1565px;
-    height: 500px;
-    padding: 2em;
-    margin: 2em;
-}
-
-.main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.sub-image-container {
-    width: 1650px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.sub-images {
-    background: var(--white);
-    min-width: 750px;
-    height: 400px;
-    padding: 2em;
-    margin: 2em;
-}
-
-.sub-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
