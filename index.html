@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>
+    <header tabindex="1">
         <section class="my-name">
             <img id="profile" src="./assets/images/profile.jpg" alt="profile picture">
             <h1>Bernard Sin Fat</h1>
@@ -19,16 +19,16 @@
         <section class="nav-section">
             <nav>
                 <ul>
-                    <li>
+                    <li tabindex="2">
                         <a href="#about-me">About Me</a>
                     </li>
-                    <li>
+                    <li tabindex="3">        
                         <a href="#work">Work</a>
                     </li>
-                    <li>
+                    <li tabindex="4">
                         <a href="">Contact Me</a>
                     </li>
-                    <li>
+                    <li tabindex="5">
                         <a href="">Resume</a>
                     </li>
                 </ul>
@@ -37,9 +37,8 @@
     </header>
 
     <main>
-        <section id="about-me">
-            <h2>About Me</h2>
-            <section class="about-me-desc"></section>
+        <section id="about-me" tabindex="6">
+            <h2>About Me</h2>   
                 <p id="about-me-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
@@ -47,69 +46,90 @@
         </section>
         
 
-        <section class="hero">
-            <img id="hero-img" src="./assets/images/hero.jpg" alt="">
+        <figure class="hero" tabindex="7">
+            <img id="hero-img" src="./assets/images/hero.jpg" alt="Hero Image">
             <section id="hero-text">
                 <pre>
 { .I am: WEB DEVELOPER
     @FULL STACK }
-    
-                    
                 </pre>
             </section>
-        </section>
+        </figure>
 
-        <section>
+        <section id="test">
             <h2 id="work">My Work</h2>
         </section>
 
-        <section class="main-image-container">
-            <section class="main-images">
+        <section class="main-image-container" tabindex="7">
+            <figure class="main-images">
                 <img class="main-image" src="./assets/images/work-weather-report.jpg" alt="">
                 <section class="text-block">
                     <h3>Weather Report</h3>
                     <p>HTML - CSS - JS</p>
                 </section>
-            </section>
+            </figure>
         </section>
     
         <section class="sub-image-container">
-            <section class="sub-images">
+            <figure class="sub-images" tabindex="8">
                 <img class="sub-image" src="./assets/images/work-survey-form.jpg" alt="">
                 <section class="text-block">
                     <h3>Survey Form</h3>
                     <p>HTML - CSS - JS</p>
                 </section>
-            </section>
+            </figure>
     
-            <section class="sub-images">
+            <figure class="sub-images" tabindex="9">
                 <img class="sub-image" src="./assets/images/work-tictactoe.jpg" alt="">
                 <section class="text-block">
                     <h3>Tic Tac Toe Game</h3>
                     <p>HTML - CSS - JS</p>
                 </section>
-            </section>
+            </figure>
     
-            <section class="sub-images">
+            <figure class="sub-images" tabindex="10">
                 <img class="sub-image" src="./assets/images/work-pastry.jpg" alt="">
                 <section class="text-block">
                     <h3>Pastry Recipes</h3>
                     <p>HTML - CSS</p>
                 </section>
-            </section>
+            </figure>
     
-            <section class="sub-images">
+            <figure class="sub-images" tabindex="11">
                 <img class="sub-image" src="./assets/images/work-gambling.jpg" alt="">
                 <section class="text-block">
                     <h3>Poker Strategies</h3>
                     <p>HTML - CSS</p>
                 </section>
-            </section>
+            </figure>
         </section>
-
     </main>
 
-    <footer>
+    <footer tabindex="12">
+        <section class="contact-me">
+            <h2>Contact Me</h2>
+        </section>
+        <section class="nav-section">
+            <nav>
+                <ul>
+                    <li tabindex="13">
+                        <a href="">+61 8 9215 2200</a>
+                    </li>
+                    <li tabindex="14">
+                        <a href="">bernardjbs@yahoo.com</a>
+                    </li>
+                    <li tabindex="15">
+                        <a href="">Github</a>
+                    </li>
+                    <li tabindex="16">
+                        <a href="">Linkedin</a>
+                    </li>
+                    <li tabindex="17">
+                        <a href="">Twitter</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
 
     </footer>
 

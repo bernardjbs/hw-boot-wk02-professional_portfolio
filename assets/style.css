@@ -10,6 +10,11 @@
     background-color: black;
 }
 
+body {
+    padding-bottom: 3em;
+    padding-top: 2em;
+}
+
 h1 {
     font-size: 250%;
     background-color: var(--black);
@@ -23,8 +28,7 @@ h2 {
     color: var(--white);
 }
 
-header, #about-me {
-    /* border: 1px solid red; */
+header, #about-me, footer {
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 1em;
@@ -37,16 +41,36 @@ header, #about-me {
     box-shadow: 2px 2px 20px white;
 }
 
-header {
-    /* border: 1px solid red; */
+header, footer {
     display: flex;
     flex: 1 1 auto;
     background-color: var(--black);
 }
 
-header:focus, #about-me:focus{
+header:focus, #about-me:focus, footer:focus {
     outline: none;
     box-shadow: 2px 2px 20px var(--green);
+}
+
+/* Hero image Gray Scale to colour on hover and on focus*/
+.hero img {
+	filter: grayscale(100%);
+	transition: .3s ease-in-out;
+}
+.hero:hover img, .hero:focus img {
+	filter: grayscale(0);
+}
+
+.hero:focus {
+    outline: none;
+}
+/* Hero text to green on hover and on focus */
+.hero #hero-text {
+    color: var(--white);
+    transition: .3s ease-in-out;
+}
+.hero:hover #hero-text, .hero:focus #hero-text {
+    color: var(--green);
 }
 
 main {
@@ -54,7 +78,6 @@ main {
 }
 
 nav ul {
-    /* border: 1px solid red; */
     margin-right: auto;
     background-color: var(--black);
 }
@@ -67,34 +90,33 @@ nav li {
 }
 
 nav li a, #about-me-text {
-    /* border: 1px solid red; */
     background-color: var(--black);
     color: var(--white);
     text-decoration: none;
     margin-top: 10px;
 }
 
-
-.my-name, #about-me, .nav-section {
+.my-name, #about-me, .nav-section, footer {
     background-color: var(--black);
     padding: 1em;
 }
 
 .my-name {
-    /* border: 1px solid blue; */
     min-width: 400px;
     display: flex;
 }
 
 #about-me {
-    /* border: 1px solid red; */
     display: flex;
     flex: 1 1 auto;
 }
 
-#about-me h2 {
-    /* border: 1px solid blue; */
+#about-me, h2 {
     min-width: 400px;
+}
+
+footer nav li {
+    margin-left: 6em;
 }
 
 #profile {
@@ -104,6 +126,7 @@ nav li a, #about-me-text {
 }
 
 .hero {
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,19 +134,18 @@ nav li a, #about-me-text {
     margin-right: 2em;
     margin-left: 2em;
 }
-#hero-img {
+#hero-img, #hero-img-focus {
     width: 1020px;
 }
 
 #hero-text {
-    /* border: 1px solid red; */
+    /* border: 1px solid blue; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3em;
     font-family: monospace;
-    color: var(--green);
 }
 
 #about-me-text {
@@ -132,14 +154,15 @@ nav li a, #about-me-text {
 }
 
 #work {
+    text-align: center;
     margin-top: 2em;
     margin-left: 1em;
 }
 
-
 .main-image-container, .sub-image-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .sub-image-container {
@@ -156,6 +179,24 @@ nav li a, #about-me-text {
     width: 1565px;
     height: 500px;
     position: relative;
+}
+
+/* Main image blur to sharp on hover and on focus*/
+.main-image-container figure img {
+	filter: blur(4px);
+	transition: .4s ease-in-out;
+}
+.main-image-container figure:hover img {
+	filter: blur(0);
+}
+
+/* Sub image blur to sharp on hover and on focus*/
+.sub-image {
+	filter: blur(4px);
+	transition: .4s ease-in-out;
+}
+.sub-image:hover {
+	filter: blur(0);
 }
 
 .sub-images {
@@ -199,22 +240,36 @@ nav li a, #about-me-text {
     }
 }
 
+@media screen and (max-width: 800px){
+    footer nav li {
+        display: block;
+    }
+    footer h2 {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 1600px){
-    .hero {
+    .hero, footer {
         flex-direction: column;
     }
     #hero-text {
         padding: 20px;
     }
-    #hero-img {
+    #hero-img, #hero-img-focus {
         max-width: 100%;
         height: auto;
     }
-
+    #work {
+        margin-top: 0;
+    }
     .sub-images {
         height: 300px;
     }
+    footer h2{
+        min-width: 200px;
+    }
+    footer nav li {
+        margin-left: 2em;
+    }
 }
-
-
-
