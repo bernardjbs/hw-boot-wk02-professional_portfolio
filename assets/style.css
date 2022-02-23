@@ -9,23 +9,21 @@
     font-family: 'Ubuntu', sans-serif;
     background-color: black;
 }
-
 body {
     padding-bottom: 3em;
     padding-top: 2em;
 }
-
 h1 {
     font-size: 250%;
     background-color: var(--black);
     color: var(--white);
     padding-left: 10px;
 }
-
 h2 {
     font-size: 200%;
     background-color: var(--black);
     color: var(--white);
+    padding: 20px;
 }
 
 header, #about-me, footer {
@@ -39,40 +37,68 @@ header, #about-me, footer {
     align-items: center;
     border-radius: 1em;
     box-shadow: 2px 2px 20px white;
+    transition: .3s ease-in-out;
 }
-
 header, footer {
     display: flex;
     flex: 1 1 auto;
     background-color: var(--black);
 }
 
-header:focus, #about-me:focus, footer:focus {
+/* Header, about-me and footer: Change box shadow to green on hover and focus */
+header:focus, #about-me:focus, footer:focus, 
+    header:hover, #about-me:hover, footer:hover {
     outline: none;
     box-shadow: 2px 2px 20px var(--green);
 }
+header:focus-within h1, header:hover h1{
+    color: #d1c628;
+    transition: 1s ease-in-out;
+}
+header:hover a, footer:hover a  {
+    color: #9a042b;
+    transition: 1s ease-in-out;
+}
+footer:focus-within h2, footer:hover h2 {
+    color: #d1c628;
+    transition: 1s ease-in-out;
+}
+header:focus-within #profile-pic, header:hover #profile-pic{
+    width: 4em;
+    height: auto;
+    transition: .5s ease-in-out;
+}
+header:focus-within, footer:focus-within     {
+    outline: none;
+    color: #9a042b;    
+    box-shadow: 2px 2px 20px var(--green);
+}
+
+header:focus-within .nav-text, footer:focus-within .nav-text{
+    color:#9a042b;
+    transition: 1s ease-in-out;
+} 
 
 /* Hero image Gray Scale to colour on hover and on focus*/
-.hero img {
+#hero img {
 	filter: grayscale(100%);
 	transition: .3s ease-in-out;
 }
-.hero:hover img, .hero:focus img {
+#hero:hover img, #hero:focus img {
 	filter: grayscale(0);
 }
-
-.hero:focus {
+#hero:focus {
     outline: none;
 }
+
 /* Hero text to green on hover and on focus */
-.hero #hero-text {
+#hero #hero-text {
     color: var(--white);
     transition: .3s ease-in-out;
 }
-.hero:hover #hero-text, .hero:focus #hero-text {
+#hero:hover #hero-text, #hero:focus #hero-text {
     color: var(--green);
 }
-
 main {
     margin-top: 3em;
 }
@@ -81,51 +107,41 @@ nav ul {
     margin-right: auto;
     background-color: var(--black);
 }
-
 nav li {
     background-color: var(--black);
     margin-left: 2em;
     display: inline-block;
     list-style-type: none;
 }
-
 nav li a, #about-me-text {
     background-color: var(--black);
     color: var(--white);
     text-decoration: none;
-    margin-top: 10px;
 }
-
-.my-name, #about-me, .nav-section, footer {
+#my-name, #about-me-text, .nav-section, footer {
     background-color: var(--black);
     padding: 1em;
 }
-
-.my-name {
-    min-width: 400px;
-    display: flex;
-}
-
-#about-me {
+#about-me, #my-name {
     display: flex;
     flex: 1 1 auto;
 }
-
-#about-me, h2 {
-    min-width: 400px;
+#about-me:focus h2, #about-me:hover h2 {
+    color:#d1c628;
+    transition: 1s ease-in-out;
 }
-
+h2, #my-name {
+    flex-shrink: 0;
+}
 footer nav li {
     margin-left: 6em;
 }
-
-#profile {
+#profile-pic {
     width: 3em;
     height: 3em;
     border-radius: 5px;
 }
-
-.hero {
+#hero {
     /* border: 1px solid blue; */
     display: flex;
     justify-content: center;
@@ -137,7 +153,6 @@ footer nav li {
 #hero-img, #hero-img-focus {
     width: 1020px;
 }
-
 #hero-text {
     /* border: 1px solid blue; */
     width: 100%;
@@ -147,75 +162,66 @@ footer nav li {
     font-size: 3em;
     font-family: monospace;
 }
-
 #about-me-text {
     text-align: justify;
-    margin-left: 2em;
 }
-
 #work {
     text-align: center;
     margin-top: 2em;
     margin-left: 1em;
 }
-
-.main-image-container, .sub-image-container {
+#main-image-container, #sub-image-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-
-.sub-image-container {
+#sub-image-container {
     flex-wrap: wrap;
 }
-
 .main-images, .sub-images{
     background: var(--white);
     padding: 2em;
     margin: 2em;
 }
-
 .main-images{
     width: 1565px;
     height: 500px;
     position: relative;
+    transition: .4s ease-in-out;
 }
 
-/* Main image blur to sharp on hover and on focus*/
-.main-image-container figure img {
+/* Border radius to main images and sub images<figure> */
+.main-images:hover, .sub-images:hover {
+    border-radius: 15px;
+}
+
+/* Main image  and sub image blur to sharp on hover and on focus*/
+.main-image, .sub-image {
 	filter: blur(4px);
 	transition: .4s ease-in-out;
 }
-.main-image-container figure:hover img {
+.main-image:hover, .main-image:focus, .sub-image:hover, .sub-image:focus {
 	filter: blur(0);
+    border-radius: 15px;
+    outline: none;
 }
-
-/* Sub image blur to sharp on hover and on focus*/
-.sub-image {
-	filter: blur(4px);
-	transition: .4s ease-in-out;
-}
-.sub-image:hover {
-	filter: blur(0);
-}
-
 .sub-images {
     display: flex;
     flex-direction: row;
 }
-
 .sub-images {
     width: 750px;
     height: 400px;
     position: relative;
+    transition: .4s ease-in-out;
 }
-
 .main-image, .sub-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+ /* Text block for work description on main and sub images */
 .text-block {
     position: absolute;
     bottom: 25%;
@@ -223,35 +229,27 @@ footer nav li {
     background-color: white;
     color: var(--white);
   }
-
   .text-block h3 {
       padding: 15px;
+      text-align: center;
   }
-
   .text-block p {
+    font-size: .75em;
+    text-align: center;
     padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
-@media screen and (max-width: 600px){
-    #about-me, header{
-        flex-direction: column;
-    }
+#contact-me:focus {
+    outline: none;
 }
+/***** MEDIA QUERIES FOR RESPONSIVE LAYOUT *****/
 
-@media screen and (max-width: 800px){
-    footer nav li {
-        display: block;
-    }
-    footer h2 {
-        text-align: center;
-    }
-}
 
+/* When screen is 1600px or less */
 @media screen and (max-width: 1600px){
-    .hero, footer {
+    #hero, footer {
         flex-direction: column;
+        align-items: center;
     }
     #hero-text {
         padding: 20px;
@@ -271,5 +269,100 @@ footer nav li {
     }
     footer nav li {
         margin-left: 2em;
+    }
+
+}
+
+/* When screen is 800px or less */
+@media screen and (max-width: 800px){
+    footer nav li {
+        display: block;
+    }
+    footer h2 {
+        text-align: center;
+    }
+    .text-block {
+        bottom: 20%
+    }
+    .text-block h3 {
+        padding: 5px;
+        font-size: 15px;
+    }
+    .text-block p {
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+    footer .nav-section {
+        text-align: left;
+    }
+}
+
+/* When screen is 600px or less */
+@media screen and (max-width: 600px){
+    #about-me, header{
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        padding: 10px;
+    }
+    #my-name {
+        align-items: center;
+    }
+
+}
+
+/* When screen is 350px or less */
+@media screen and (max-width: 450px){
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 23px;
+    }
+    header {
+        align-items: flex-start;
+    }
+    #about-me {
+        align-items: flex-start;
+    }
+    footer nav li, header nav li {
+        display: block;
+    }
+    footer {
+        align-items: flex-start;
+    }
+    footer h2 {
+        /* text-align: start; */
+        padding-left: 1em;
+    }
+    a, p {
+        font-size: 15px;
+    }
+    #hero-text {
+       font-size: 2em;
+    }
+    #work {
+        margin:0;
+    }
+    .text-block {
+        bottom: 20%
+    }
+    .text-block h3 {
+        padding: 5px;
+        font-size: 15px;
+    }
+    .text-block p {
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+    .main-images, .sub-images {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    #hero {
+        margin-top: 3em;
     }
 }
