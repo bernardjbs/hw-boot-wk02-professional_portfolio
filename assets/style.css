@@ -1,14 +1,22 @@
+/***** VARIABLES *****/
 :root {
     --white: #D2D6EF;
     --black: black;
     --green: green;
+    --yellow: #d1c628;
+    --red: #9a042b;
 }
 
+/***** FONTS *****/
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/***** UNIVERSAL SELECTOR *****/
 * {
     font-family: 'Ubuntu', sans-serif;
     background-color: black;
 }
+
+/***** HTML SELECTORS *****/
 body {
     padding-bottom: 3em;
     padding-top: 2em;
@@ -25,7 +33,9 @@ h2 {
     color: var(--white);
     padding: 20px;
 }
-
+pre{
+    line-height: 1.5em;
+}
 header, #about-me, footer {
     margin-left: 2em;
     margin-right: 2em;
@@ -36,7 +46,7 @@ header, #about-me, footer {
     justify-content: space-between;
     align-items: center;
     border-radius: 1em;
-    box-shadow: 2px 2px 20px white;
+    box-shadow: 2px 2px 20px var(--white);
     transition: .3s ease-in-out;
 }
 header, footer {
@@ -52,16 +62,17 @@ header:focus, #about-me:focus, footer:focus,
     box-shadow: 2px 2px 20px var(--green);
 }
 header:focus-within h1, header:hover h1{
-    color: #d1c628;
+    color: var(--yellow);
     transition: 1s ease-in-out;
 }
 header:hover a, footer:hover a  {
-    color: #9a042b;
+    color: var(--red);
     transition: 1s ease-in-out;
 }
 footer:focus-within h2, footer:hover h2 {
-    color: #d1c628;
-    transition: 1s ease-in-out;
+    color: var(--yellow);
+    font-size: 220%;
+    transition: .5s ease-in-out;
 }
 header:focus-within #profile-pic, header:hover #profile-pic{
     width: 4em;
@@ -70,39 +81,16 @@ header:focus-within #profile-pic, header:hover #profile-pic{
 }
 header:focus-within, footer:focus-within     {
     outline: none;
-    color: #9a042b;    
+    color: var(--red);    
     box-shadow: 2px 2px 20px var(--green);
 }
-
 header:focus-within .nav-text, footer:focus-within .nav-text{
-    color:#9a042b;
+    color:var(--red);
     transition: 1s ease-in-out;
 } 
-
-/* Hero image Gray Scale to colour on hover and on focus*/
-#hero img {
-	filter: grayscale(100%);
-	transition: .3s ease-in-out;
-}
-#hero:hover img, #hero:focus img {
-	filter: grayscale(0);
-}
-#hero:focus {
-    outline: none;
-}
-
-/* Hero text to green on hover and on focus */
-#hero #hero-text {
-    color: var(--white);
-    transition: .3s ease-in-out;
-}
-#hero:hover #hero-text, #hero:focus #hero-text {
-    color: var(--green);
-}
 main {
     margin-top: 3em;
 }
-
 nav ul {
     margin-right: auto;
     background-color: var(--black);
@@ -118,6 +106,60 @@ nav li a, #about-me-text {
     color: var(--white);
     text-decoration: none;
 }
+footer nav li {
+    margin-left: 6em;
+}
+
+/***** IDs *****/
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+#hero-img {
+    width: 75%;
+}
+
+/* Hero image Gray Scale to colour on hover and on focus*/
+#hero img {
+	filter: grayscale(100%);
+	transition: .3s ease-in-out;
+}
+#hero:hover img, #hero:focus img {
+	filter: grayscale(0);
+}
+#hero:focus {
+    outline: none;
+}
+#hero-img {
+    width: 900px;
+}
+#hero-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-family: monospace;
+}
+/* Hero text to green on hover and on focus */
+#hero #hero-text {
+    color: var(--white);
+    transition: .3s ease-in-out;
+}
+#hero:hover, #hero:focus {
+    border: 2px solid var(--green);
+    transition: .7s ease-in-out;
+}
+#hero:hover #hero-text, #hero:focus #hero-text {
+    color: var(--green);
+}
+#hero:hover #hero-img, #hero:focus #hero-img {
+    width: 1020px;
+}
 #my-name, #about-me-text, .nav-section, footer {
     background-color: var(--black);
     padding: 1em;
@@ -127,40 +169,20 @@ nav li a, #about-me-text {
     flex: 1 1 auto;
 }
 #about-me:focus h2, #about-me:hover h2 {
-    color:#d1c628;
-    transition: 1s ease-in-out;
+    color: var(--yellow);
+    font-size: 220%;
+    transition: .5s ease-in-out;
+}
+#my-name {
+    align-items: center;
 }
 h2, #my-name {
     flex-shrink: 0;
-}
-footer nav li {
-    margin-left: 6em;
 }
 #profile-pic {
     width: 3em;
     height: 3em;
     border-radius: 5px;
-}
-#hero {
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5em;
-    margin-right: 2em;
-    margin-left: 2em;
-}
-#hero-img, #hero-img-focus {
-    width: 1020px;
-}
-#hero-text {
-    /* border: 1px solid blue; */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    font-family: monospace;
 }
 #about-me-text {
     text-align: justify;
@@ -178,6 +200,11 @@ footer nav li {
 #sub-image-container {
     flex-wrap: wrap;
 }
+#contact-me:focus {
+    outline: none;
+}
+
+/***** CLASSES *****/
 .main-images, .sub-images{
     background: var(--white);
     padding: 2em;
@@ -196,9 +223,13 @@ footer nav li {
 }
 
 /* Main image  and sub image blur to sharp on hover and on focus*/
-.main-image, .sub-image {
-	filter: blur(4px);
+.main-image {
+	filter: blur(4px) sepia(70%);
 	transition: .4s ease-in-out;
+}
+.sub-image {
+    filter: blur(4px);
+    transition: .4s ease-in-out;
 }
 .main-image:hover, .main-image:focus, .sub-image:hover, .sub-image:focus {
 	filter: blur(0);
@@ -220,31 +251,30 @@ footer nav li {
     height: 100%;
     object-fit: cover;
 }
-
+/* Will fill parent container */
+.sub-img-link {
+    flex-grow: 1;
+    background: var(--white);
+}
  /* Text block for work description on main and sub images */
 .text-block {
     position: absolute;
     bottom: 25%;
     left: 50px;
-    background-color: white;
+    background-color: var(--white);
     color: var(--white);
   }
-  .text-block h3 {
-      padding: 15px;
-      text-align: center;
+.text-block h3 {
+    padding: 15px;
+    text-align: center;
   }
-  .text-block p {
+.text-block p {
     font-size: .75em;
     text-align: center;
     padding-bottom: 15px;
 }
 
-#contact-me:focus {
-    outline: none;
-}
 /***** MEDIA QUERIES FOR RESPONSIVE LAYOUT *****/
-
-
 /* When screen is 1600px or less */
 @media screen and (max-width: 1600px){
     #hero, footer {
@@ -254,7 +284,7 @@ footer nav li {
     #hero-text {
         padding: 20px;
     }
-    #hero-img, #hero-img-focus {
+    #hero-img {
         max-width: 100%;
         height: auto;
     }
@@ -311,10 +341,13 @@ footer nav li {
     #my-name {
         align-items: center;
     }
+    #hero-text {
+        font-size: 2em;
+     }
 
 }
 
-/* When screen is 350px or less */
+/* When screen is 450px or less */
 @media screen and (max-width: 450px){
     h1 {
         font-size: 25px;
@@ -335,14 +368,13 @@ footer nav li {
         align-items: flex-start;
     }
     footer h2 {
-        /* text-align: start; */
         padding-left: 1em;
     }
     a, p {
         font-size: 15px;
     }
     #hero-text {
-       font-size: 2em;
+       font-size: 1.5em;
     }
     #work {
         margin:0;
